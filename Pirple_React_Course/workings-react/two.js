@@ -1,3 +1,24 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import { Car, Model } from './Classcom';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+const car = ReactDOM.createRoot(document.getElementById('car'));
+const model = ReactDOM.createRoot(document.getElementById('model'));
+root.render(
+  <React.StrictMode>
+    <App contentData="Some Data"/>
+  </React.StrictMode>
+);
+car.render(<Car classData='Some Data From The Class Component!'newClassData='Some new data here'/>);
+model.render(<Model />)
+
+reportWebVitals();
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,6 +50,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <div id="car"></div>
     <div id="model"></div>
     <!--
       This HTML file is a template.
