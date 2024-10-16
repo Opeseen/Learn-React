@@ -11,6 +11,7 @@ function App(prop) {
       <Detail ram="4GB" hdd="500GB" processor="Core i3"/>
       <Detail ram="12GB" hdd="1500GB" processor="Core i5"/>
       <Detail hdd="2500GB" processor="Core i7" ram="18GB"/>
+      <Detail />
     </div>
   )
 }
