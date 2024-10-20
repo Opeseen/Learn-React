@@ -1,10 +1,10 @@
 import React from "react";
-import CardContact from "./ContactCard";
+import ContactCard from "./ContactCard";
 
 const ContactList = (props) => {
-  const renderContactList = props.contact.map((contact) =>{
+  const renderContactList = props.contact.map((cont) =>{
     return(
-      <CardContact con={contact} />
+      <ContactCard con={cont} />
     )
   });
   return <div className="ui celled list">

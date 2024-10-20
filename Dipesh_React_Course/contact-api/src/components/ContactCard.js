@@ -1,7 +1,7 @@
 import React from "react";
 
-const CardContact = (props) => {
-  const {id, name, email} = props.con;
+const ContactCard = (props) => {
+  const {name, email} = props.con;
   return(
     <div className="item">
     <div className="content">
@@ -15,4 +15,4 @@ const CardContact = (props) => {
   )
 };
 
-export default CardContact;
+export default ContactCard;
