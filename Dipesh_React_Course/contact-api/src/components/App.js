@@ -5,11 +5,20 @@ import {AddContact} from './AddContact';
 import ContactList from './ContactList';
 
 function App() {
-  const LOCAL_STORAGE_KEY = "contacts";
+  const cid = Date.now();
+  const LOCAL_STORAGE_KEY = "contact-key";
   const [contacts, setContacts] = useState([]);
 
   const contactHandler = (input) => {
-    setContacts([...contacts, input]);
+    setContacts([...contacts, {cid, ...input}]);
+  };
+
+  const removeContactHandler = (id) => {
+    const newContactList = contacts.filter((filterContact) => {
+      return filterContact.cid !== id;
+    });
+
+    setContacts(newContactList);
   };
 
   useEffect(() => {
@@ -19,12 +28,12 @@ function App() {
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
   }, [contacts]);
-  
+
   return (
     <div className='ui container'>
       <Header />
       <AddContact addContactHandler={contactHandler}/>
-      <ContactList contact={contacts} />
+      <ContactList contact={contacts} getContactID={removeContactHandler} />
     </div>
   );
 }
